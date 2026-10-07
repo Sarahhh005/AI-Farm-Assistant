@@ -1,0 +1,123 @@
+Crop: Apple | Disease: Apple Scab (Apple___Apple_scab)
+Symptoms:
+- Olive-green to brown lesions appear on leaves.
+- Infected leaves may develop spots and drop prematurely.
+- Dark scabby lesions can form on fruit.
+Management:
+- Remove and dispose of infected plant material.
+- Improve air circulation around the tree.
+- Follow locally recommended fungicide practices when necessary.
+Prevention:
+- Maintain good orchard sanitation.
+- Remove fallen infected leaves and fruit.
+- Improve canopy airflow and avoid prolonged leaf wetness.
+
+Crop: Apple | Disease: Cedar Apple Rust (Apple___Cedar_apple_rust)Crop: Apple | Disease: Cedar Apple Rust (Apple___Cedar_apple_rust)
+Symptoms: Bright yellow-orange spots on upper leaf surfaces, later with tiny black dots; small tube-like projections underneath; raised lesions on fruit.
+Management: Remove nearby juniper or red cedar galls where practical; time protectant fungicides from pink bud to petal fall per local advice; remove badly infected leaves.
+Prevention: Plant resistant varieties; keep apples away from junipers; scout during wet spring weather.
+
+Crop: Cherry | Disease: Powdery Mildew (Cherry_(including_sour)___Powdery_mildew)
+Symptoms: White powdery fungal growth on leaves and shoots; leaves curl, distort or turn pale; fruit can be affected in severe cases.
+Management: Prune out infected shoots; improve airflow and light in the canopy; apply fungicide only per local recommendations when disease appears early.
+Prevention: Prune for an open canopy; avoid excess nitrogen; choose tolerant varieties; scout early.
+
+Crop: Corn (maize) | Disease: Gray Leaf Spot / Cercospora Leaf Spot (Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot)
+Symptoms: Narrow rectangular tan to gray lesions running parallel to the veins; lesions merge and blight leaves in warm, humid weather.
+Management: Rotate with non-host crops; manage crop residue; use fungicide only when scouting finds disease on upper leaves, per local guidance.
+Prevention: Plant resistant hybrids; avoid continuous corn; improve drainage and airflow.
+
+Crop: Corn (maize) | Disease: Common Rust (Corn_(maize)___Common_rust_)
+Symptoms: Small round to elongated cinnamon-brown pustules on both leaf surfaces that turn dark with age; heavy infection yellows and kills leaves.
+Management: Often minor; consider fungicide only if pustules appear early on susceptible hybrids during cool, humid weather.
+Prevention: Plant resistant hybrids; plant at recommended dates; scout regularly.
+
+Crop: Corn (maize) | Disease: Northern Leaf Blight (Corn_(maize)___Northern_Leaf_Blight)
+Symptoms: Long cigar-shaped gray-green to tan lesions on leaves that merge, causing leaves to die early; favored by moderate temperatures and long leaf wetness.
+Management: Rotate crops; manage residue; use scouting-guided fungicide around tasseling when disease is present, per local advice.
+Prevention: Plant resistant hybrids; avoid dense planting and continuous corn.
+
+Crop: Grape | Disease: Black Rot (Grape___Black_rot)
+Symptoms: Small brown circular leaf spots with dark borders and tiny black dots; berries rot and shrivel into hard black mummies.
+Management: Remove mummified berries and infected tissue; follow a protectant fungicide program from early shoot growth through fruit set per local advice; open the canopy.
+Prevention: Vineyard sanitation; canopy pruning; train vines for fast drying.
+
+Crop: Grape | Disease: Esca / Black Measles (Grape___Esca_(Black_Measles))
+Symptoms: Tiger-stripe pattern of yellow or red interveinal leaf tissue; dark-spotted berries; sudden vine collapse; internal wood decay.
+Management: No complete cure; remove and destroy dead or affected wood; prune in dry weather and protect wounds; replace severely affected vines.
+Prevention: Use clean planting material; limit large pruning wounds; avoid pruning in wet periods; sanitize tools.
+
+Crop: Grape | Disease: Leaf Blight / Isariopsis Leaf Spot (Grape___Leaf_blight_(Isariopsis_Leaf_Spot))
+Symptoms: Irregular dark brown to reddish spots, mainly on older leaves; severe cases cause early leaf drop and weaken vines.
+Management: Remove fallen infected leaves; improve canopy airflow; use fungicide per local recommendations if disease progresses.
+Prevention: Sanitation; balanced nutrition; drip rather than overhead irrigation.
+
+Crop: Orange / Citrus | Disease: Huanglongbing, Citrus Greening (Orange___Haunglongbing_(Citrus_greening))
+Symptoms: Asymmetric blotchy yellow leaf mottling; yellow shoots; small, lopsided, bitter fruit that stays green at the base; fruit drop and tree decline.
+Management: No cure; remove infected trees; control the Asian citrus psyllid vector; report suspected cases to local agricultural authorities.
+Prevention: Plant certified disease-free trees; monitor psyllids; follow quarantine rules.
+
+Crop: Peach | Disease: Bacterial Spot (Peach___Bacterial_spot)
+Symptoms: Small angular water-soaked leaf spots that turn purple-brown and fall out, giving a shot-hole look; pitted dark spots on fruit; early leaf drop.
+Management: Use copper or other bactericides only per local advice; prune for airflow; avoid overhead irrigation; keep trees vigorous.
+Prevention: Plant tolerant varieties; avoid excess nitrogen; sanitation.
+
+Crop: Pepper, bell | Disease: Bacterial Spot (Pepper,_bell___Bacterial_spot)
+Symptoms: Small water-soaked leaf spots turning brown with yellow halos; raised scabby spots on fruit; leaves yellow and drop.
+Management: Remove infected plants and debris; avoid working in wet foliage; copper sprays may slow spread per local advice.
+Prevention: Use disease-free seed and transplants; rotate 2-3 years; use drip irrigation; sanitize tools.
+
+Crop: Potato | Disease: Late Blight (Potato___Late_blight)
+Symptoms: Pale green to dark water-soaked leaf lesions with white fuzzy growth underneath in humid weather; blackened stems; firm reddish-brown tuber rot. Spreads very fast in cool, wet weather.
+Management: Destroy infected plants and volunteer potatoes; follow a protective fungicide program per local advice; never store infected tubers.
+Prevention: Use certified seed tubers; hill soil; avoid overhead irrigation; scout often.
+
+Crop: Squash | Disease: Powdery Mildew (Squash___Powdery_mildew)
+Symptoms: White powdery patches on upper and lower leaf surfaces; leaves yellow, brown and die; reduced yield.
+Management: Remove severely infected leaves; improve spacing and airflow; use sulfur, biological or other fungicide options per local advice.
+Prevention: Plant resistant varieties; avoid crowding; scout from early flowering.
+
+Crop: Strawberry | Disease: Leaf Scorch (Strawberry___Leaf_scorch)
+Symptoms: Many small purple to dark-red spots on leaves that merge; leaf tissue dries, browns and looks scorched; weakened plants yield less.
+Management: Remove old infected leaves after harvest; improve airflow; use fungicide per local advice if severe.
+Prevention: Use resistant cultivars and certified plants; avoid overhead irrigation; space plants; rotate beds.
+
+Crop: Tomato | Disease: Bacterial Spot (Tomato___Bacterial_spot)
+Symptoms: Small dark water-soaked leaf spots with yellow halos; raised scabby spots on fruit; severe infection defoliates plants.
+Management: Remove infected plants; avoid handling wet plants; copper sprays may help per local advice.
+Prevention: Use clean seed and transplants; rotate 2-3 years; use drip irrigation; sanitize tools and stakes.
+
+Crop: Tomato | Disease: Leaf Mold (Tomato___Leaf_Mold)
+Symptoms: Pale green or yellow spots on upper leaf surfaces with olive-green to brown velvety mold beneath; leaves curl and wither; common in humid greenhouses.
+Management: Lower humidity and ventilate; remove infected leaves; keep foliage dry; use fungicide per local advice.
+Prevention: Plant resistant varieties; space and stake plants; prune lower leaves; use drip irrigation.
+
+Crop: Tomato | Disease: Septoria Leaf Spot (Tomato___Septoria_leaf_spot)
+Symptoms: Many small circular spots with dark borders and gray-white centers, starting on lower leaves; heavy yellowing and leaf loss expose fruit to sunscald.
+Management: Remove infected lower leaves; mulch to stop soil splash; use fungicide per local advice.
+Prevention: Rotate 2-3 years; remove plant debris; avoid overhead watering; space plants.
+
+Crop: Tomato | Disease: Spider Mites / Two-spotted Spider Mite (Tomato___Spider_mites Two-spotted_spider_mite)
+Symptoms: Fine yellow stippling on leaves, bronzing, and fine webbing underneath; leaves dry and drop; worst in hot, dry weather.
+Management: Spray plants with a strong water jet; use insecticidal soap, miticides or predatory mites per local advice; remove heavily infested leaves.
+Prevention: Avoid drought stress; reduce dust; check leaf undersides weekly; protect natural enemies.
+
+Crop: Tomato | Disease: Target Spot (Tomato___Target_Spot)
+Symptoms: Brown spots with concentric rings and sometimes yellow halos on leaves; spots may also appear on stems and fruit; leaf drop in severe cases.
+Management: Remove infected leaves and debris; improve airflow; use fungicide per local advice.
+Prevention: Rotate crops; avoid overhead irrigation; stake, prune and space plants.
+
+Crop: Tomato | Disease: Tomato Yellow Leaf Curl Virus (Tomato___Tomato_Yellow_Leaf_Curl_Virus)
+Symptoms: Upward curling and yellowing of leaf edges, small crumpled leaves, stunted plants, flower drop and poor fruit set. Spread by whiteflies.
+Management: No cure; remove and destroy infected plants early; control whiteflies with traps, insect netting and approved insecticides per local advice.
+Prevention: Plant tolerant varieties; use insect-proof nets in nurseries; control weeds.
+
+Crop: Tomato | Disease: Tomato Mosaic Virus (Tomato___Tomato_mosaic_virus)
+Symptoms: Light and dark green mosaic mottling, distorted fern-like leaves, stunting, uneven fruit ripening.
+Management: No cure; remove and destroy infected plants; wash hands and disinfect tools; avoid handling plants after touching tobacco.
+Prevention: Use certified virus-free seed; plant resistant varieties; control weeds; sanitize equipment.
+
+Crop: Apple, Blueberry, Cherry, Corn (maize), Grape, Peach, Pepper (bell), Potato, Raspberry, Soybean, Strawberry, Tomato | Status: Healthy plant (classes ending in ___healthy)
+Symptoms: None detected; leaves are evenly green without spots, lesions, curling, mold or powdery growth.
+Management: No treatment needed; continue balanced fertilization, base-level irrigation and routine scouting.
+Prevention: Keep good sanitation, spacing and airflow; use certified planting material.

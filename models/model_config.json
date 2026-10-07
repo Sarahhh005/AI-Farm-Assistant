@@ -1,0 +1,18 @@
+{
+    "architecture": "EfficientNet-B0",
+    "num_classes": 38,
+    "image_size": 224,
+    "imagenet_mean": [
+        0.485,
+        0.456,
+        0.406
+    ],
+    "imagenet_std": [
+        0.229,
+        0.224,
+        0.225
+    ],
+    "source_checkpoint": "/kaggle/working/efficientnet_b0_finetuned_best.pth",
+    "seed": 42,
+    "images_per_class": 250
+}

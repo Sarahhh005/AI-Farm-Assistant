@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI Farm Assistant</title>
+<style>
+:root{--bg:#f5f3ea;--card:#fff;--ink:#1c2a21;--mute:#5f6e64;--line:#e4e1d2;--g:#2c7a4b;--g2:#e5f1e9;--warn:#a96a0c;--warnbg:#fcf1d9;--bad:#b23a27;--badbg:#fbe8e4;--sh:0 1px 2px rgba(20,40,25,.06),0 10px 30px rgba(20,40,25,.07)}
+@media(prefers-color-scheme:dark){:root{--bg:#0e1611;--card:#16201a;--ink:#e8efe9;--mute:#9db0a3;--line:#253227;--g:#5fbf84;--g2:#1b2d22;--warn:#e5b25d;--warnbg:#2b2413;--bad:#f08a76;--badbg:#31201b;--sh:none}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 system-ui,"Segoe UI",Tahoma,Arial,sans-serif;min-height:100vh}
+.top{display:flex;justify-content:space-between;align-items:center;padding:14px clamp(16px,4vw,40px);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:18px}
+.brand svg{width:30px;height:30px;color:var(--g)}
+.r{display:flex;align-items:center;gap:10px}
+.pill{display:flex;align-items:center;gap:7px;font-size:13px;color:var(--mute);padding:5px 12px;border:1px solid var(--line);border-radius:99px;background:var(--card)}
+.pill i{width:8px;height:8px;border-radius:50%;background:var(--mute)}
+.pill.on i{background:#2fb35f}.pill.off i{background:var(--bad)}
+button{font:inherit;cursor:pointer}
+.ghost{background:none;border:1px solid var(--line);color:var(--ink);padding:6px 14px;border-radius:99px}
+.ghost:hover{border-color:var(--g);color:var(--g)}
+main{max-width:1080px;margin:0 auto;padding:clamp(20px,4vw,44px) clamp(16px,4vw,40px) 60px}
+.hero h1{font-size:clamp(26px,4.4vw,40px);line-height:1.15;margin:0 0 10px;letter-spacing:-.02em}
+.hero p{margin:0 0 28px;color:var(--mute);max-width:620px;font-size:17px}
+.grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:22px;align-items:start}
+@media(max-width:860px){.grid{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:20px;box-shadow:var(--sh)}
+.dz{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:8px;min-height:280px;border:2px dashed var(--line);border-radius:14px;cursor:pointer;padding:16px;overflow:hidden;transition:.15s}
+.dz:hover,.dz.drag,.dz:focus-visible{border-color:var(--g);background:var(--g2);outline:none}
+.dz svg{width:44px;height:44px;color:var(--g)}
+.dz b{font-size:16px}.dz small{color:var(--mute)}
+.dz img{max-width:100%;max-height:340px;border-radius:10px;object-fit:contain}
+.row{display:flex;gap:10px;margin-top:16px;flex-wrap:wrap}
+.btn{flex:1;background:var(--g);color:#fff;border:0;padding:13px 20px;border-radius:12px;font-weight:600;font-size:16px}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.btn:not(:disabled):hover{filter:brightness(1.08)}
+.empty{text-align:center;padding:48px 16px;color:var(--mute)}
+.empty svg{width:56px;height:56px;color:var(--g);opacity:.7}
+.empty h3{color:var(--ink);margin:12px 0 4px}
+.steps{list-style:none;margin:0;padding:8px 0}
+.steps li{display:flex;align-items:center;gap:12px;padding:12px 0;color:var(--mute)}
+.steps li i{width:24px;height:24px;border-radius:50%;border:2px solid var(--line);flex:none}
+.steps li.act{color:var(--ink);font-weight:600}
+.steps li.act i{border-color:var(--g);border-top-color:transparent;animation:sp .8s linear infinite}
+.steps li.done{color:var(--g)}.steps li.done i{background:var(--g);border-color:var(--g)}
+@keyframes sp{to{transform:rotate(360deg)}}
+.head{display:flex;gap:18px;align-items:center;margin-bottom:18px}
+.ring{position:relative;width:92px;height:92px;flex:none}
+.ring svg{width:92px;height:92px;transform:rotate(-90deg)}
+.ring circle{fill:none;stroke-width:8;stroke-linecap:round}
+.ring .bg{stroke:var(--line)}
+.ring span{position:absolute;inset:0;display:grid;place-items:center;font-weight:700;font-size:18px}
+.crop{font-size:13px;color:var(--mute);text-transform:uppercase;letter-spacing:.08em}
+.name{font-size:clamp(22px,3.4vw,30px);font-weight:700;line-height:1.2;margin:2px 0 8px}
+.tag{display:inline-block;font-size:13px;font-weight:600;padding:3px 12px;border-radius:99px;background:var(--badbg);color:var(--bad)}
+.tag.ok{background:var(--g2);color:var(--g)}
+.note{margin:0 0 14px;padding:10px 14px;border-radius:10px;background:var(--warnbg);color:var(--warn);font-size:14px}
+.err{background:var(--badbg);color:var(--bad);padding:14px;border-radius:12px}
+.sec{border-inline-start:4px solid var(--g);background:var(--g2);border-radius:6px 12px 12px 6px;padding:12px 16px;margin-top:12px}
+[dir=rtl] .sec{border-radius:12px 6px 6px 12px}
+.sec h4{margin:0 0 6px;font-size:15px;color:var(--g)}
+.sec ul{margin:0;padding-inline-start:20px}.sec li{margin:3px 0}
+.sec p{margin:0;color:var(--mute);font-size:14px}
+.disc{margin-top:16px;font-size:13px;color:var(--mute)}
+pre{white-space:pre-wrap;word-break:break-word;font-size:13px}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="brand">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 4C9 4 4 9 4 15c0 2 .6 3.600 1.500 5C7 19 9 15 14 12c-4 3-6 6-6.500 8.500C16 20 20 14 20 4z"/></svg>
+    <span data-i="brand"></span>
+  </div>
+  <div class="r"><span class="pill" id="st"><i></i><span id="stt"></span></span><button class="ghost" id="lg"></button></div>
+</header>
+<main>
+  <section class="hero"><h1 data-i="h1"></h1><p data-i="sub"></p></section>
+  <div class="grid">
+    <section class="card">
+      <label class="dz" id="dz" tabindex="0">
+        <input id="f" type="file" accept="image/*" hidden>
+        <div id="dzc">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 16V4m0 0L8 8m4-4 4 4"/><path d="M4 16v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3"/></svg>
+          <div><b data-i="drop"></b></div><small data-i="hint"></small>
+        </div>
+        <img id="pv" alt="" hidden>
+      </label>
+      <div class="row"><button class="btn" id="go" disabled data-i="go"></button><button class="ghost" id="rs" hidden data-i="chg"></button></div>
+    </section>
+    <section class="card" id="out" aria-live="polite"></section>
+  </div>
+</main>
+<script>
+const API='http://127.0.0.1:8000';
+const T={en:{brand:'AI Farm Assistant',h1:'Spot plant disease in seconds',sub:'Upload a clear photo of a leaf. We identify the disease and give you guidance from our agricultural knowledge base.',drop:'Drop a leaf photo here or click to browse',hint:'JPG, PNG or WEBP · one leaf, good light',go:'Analyze plant',chg:'Choose another',on:'API online',off:'API offline',s1:'Analyzing the image',s2:'Searching the knowledge base',s3:'Writing recommendations',et:'Your diagnosis will appear here',es:'Add a photo and press Analyze.',conf:'confidence',hl:'Healthy plant',ds:'Disease detected',sy:'Symptoms',mg:'Management',pv:'Prevention',none:'No details available for this section.',low:'Low confidence. Try a clearer, closer photo of a single leaf.',disc:'General guidance only. Consult a local agronomist before treating.',net:'Cannot reach the server. Make sure the API is running.',bad:'Please choose an image file.',raw:'Raw response'},
+ar:{brand:'مساعد المزارع الذكي',h1:'اكتشف مرض النبات في ثوانٍ',sub:'ارفع صورة واضحة لورقة النبات، وسنحدد المرض ونقدم لك إرشادات من قاعدة المعرفة الزراعية.',drop:'اسحب صورة الورقة هنا أو اضغط للاختيار',hint:'JPG أو PNG أو WEBP · ورقة واحدة وإضاءة جيدة',go:'حلّل النبات',chg:'اختر صورة أخرى',on:'الخادم متصل',off:'الخادم غير متصل',s1:'تحليل الصورة',s2:'البحث في قاعدة المعرفة',s3:'صياغة التوصيات',et:'سيظهر التشخيص هنا',es:'أضف صورة ثم اضغط تحليل.',conf:'ثقة',hl:'نبات سليم',ds:'تم اكتشاف مرض',sy:'الأعراض',mg:'العلاج والإدارة',pv:'الوقاية',none:'لا توجد تفاصيل متاحة لهذا القسم.',low:'الثقة منخفضة. جرّب صورة أوضح وأقرب لورقة واحدة.',disc:'إرشادات عامة فقط. استشر مهندسًا زراعيًا قبل العلاج.',net:'تعذر الاتصال بالخادم. تأكد أن الـ API يعمل.',bad:'من فضلك اختر ملف صورة.',raw:'الرد الخام'}};
+const $=s=>document.querySelector(s);
+let lang='en',file=null,state=null,busy=false,online=null,stepNow=0;
+try{lang=localStorage.getItem('lang')||((navigator.language||'').slice(0,2)==='ar'?'ar':'en')}catch(e){}
+const t=k=>T[lang][k];
+const esc=s=>{const d=document.createElement('div');d.textContent=s;return d.innerHTML};
+
+function setLang(l){
+  lang=l;try{localStorage.setItem('lang',l)}catch(e){}
+  document.documentElement.lang=l;document.documentElement.dir=l==='ar'?'rtl':'ltr';
+  document.querySelectorAll('[data-i]').forEach(e=>e.textContent=t(e.dataset.i));
+  $('#lg').textContent=l==='ar'?'English':'العربية';
+  paintStatus();paint();
+}
+function paintStatus(){const s=$('#st');s.className='pill'+(online===null?'':online?' on':' off');$('#stt').textContent=online===null?'…':t(online?'on':'off')}
+async function ping(){try{const r=await fetch(API+'/health');online=r.ok}catch(e){online=false}paintStatus()}
+
+/* Backend returns str(pydantic) -> "disease='X' symptoms=['a'] management=[...] prevention=[...]" */
+function pyStrings(v){const r=[];let i=0;while(i<v.length){const q=v[i];if(q==="'"||q==='"'){let j=i+1,b='';while(j<v.length&&v[j]!==q){if(v[j]==='\\'&&j+1<v.length){j++;b+=v[j]==='n'?'\n':v[j]}else b+=v[j];j++}r.push(b);i=j+1}else i++}return r}
+function parseAnswer(raw){
+  if(raw&&typeof raw==='object')return raw;
+  raw=String(raw||'');
+  try{const j=JSON.parse(raw);if(j&&typeof j==='object')return j}catch(e){}
+  const m=[...raw.matchAll(/(?:^|\s)(disease|symptoms|management|prevention)=/g)];
+  if(m.length<4)return null;
+  const o={};
+  m.forEach((x,k)=>{const a=x.index+x[0].length,b=k+1<m.length?m[k+1].index:raw.length;o[x[1]]=pyStrings(raw.slice(a,b))});
+  return o;
+}
+const list=v=>Array.isArray(v)?v:(v?[String(v)]:[]);
+const clean=s=>s.replace(/_/g,' ').replace(/\s+/g,' ').trim();
+
+function steps(){
+  const L=[t('s1'),t('s2'),t('s3')];
+  return '<ul class="steps">'+L.map((x,i)=>`<li class="${i<stepNow?'done':i===stepNow?'act':''}"><i></i>${x}</li>`).join('')+'</ul>';
+}
+function section(k,items){
+  return `<div class="sec"><h4>${t(k)}</h4>`+(items.length?'<ul>'+items.map(x=>`<li>${esc(x)}</li>`).join('')+'</ul>':`<p>${t('none')}</p>`)+'</div>';
+}
+function paint(){
+  const o=$('#out');
+  if(busy){o.innerHTML=steps();return}
+  if(!state){o.innerHTML=`<div class="empty"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 4C9 4 4 9 4 15c0 2 .6 3.600 1.500 5C7 19 9 15 14 12c-4 3-6 6-6.500 8.500C16 20 20 14 20 4z"/></svg><h3>${t('et')}</h3><div>${t('es')}</div></div>`;return}
+  if(!state.ok){o.innerHTML=`<div class="err">${esc(state.m)}</div>`;return}
+  const j=state.j,a=parseAnswer(j.answer),d=String(j.disease||''),sp=d.indexOf(' ');
+  const crop=clean(sp>0?d.slice(0,sp):d),dis=clean(sp>0?d.slice(sp+1):''),healthy=/healthy/i.test(dis);
+  const c=Math.max(0,Math.min(100,+j.confidence||0)),col=c>=80?'var(--g)':c>=60?'var(--warn)':'var(--bad)',C=2*Math.PI*38;
+  let h=`<div class="head"><div class="ring"><svg viewBox="0 0 92 92"><circle class="bg" cx="46" cy="46" r="38"/><circle cx="46" cy="46" r="38" stroke="${col}" stroke-dasharray="${C}" stroke-dashoffset="${C*(1-c/100)}"/></svg><span>${c.toFixed(1)}%</span></div><div><div class="crop">${esc(crop)} · ${t('conf')}</div><div class="name">${esc(healthy?crop:dis||crop)}</div><span class="tag ${healthy?'ok':''}">${t(healthy?'hl':'ds')}</span></div></div>`;
+  if(c<60)h+=`<div class="note">${t('low')}</div>`;
+  if(a){h+=section('sy',list(a.symptoms))+section('mg',list(a.management))+section('pv',list(a.prevention))}
+  else h+=`<div class="sec"><h4>${t('raw')}</h4><pre>${esc(String(j.answer))}</pre></div>`;
+  o.innerHTML=h+`<div class="disc">${t('disc')}</div>`;
+}
+
+function pick(f){
+  if(!f)return;
+  if(!f.type.startsWith('image/')){state={ok:false,m:t('bad')};paint();return}
+  file=f;state=null;
+  $('#pv').src=URL.createObjectURL(f);$('#pv').hidden=false;$('#dzc').hidden=true;
+  $('#go').disabled=false;$('#rs').hidden=false;paint();
+}
+async function analyze(){
+  if(!file||busy)return;
+  busy=true;stepNow=0;$('#go').disabled=true;paint();
+  const tm=setInterval(()=>{if(stepNow<2){stepNow++;paint()}},2500);
+  try{
+    const fd=new FormData();fd.append('file',file);
+    const r=await fetch(API+'/predict',{method:'POST',body:fd});
+    const j=await r.json().catch(()=>({}));
+    if(!r.ok)throw new Error(typeof j.detail==='string'?j.detail:'HTTP '+r.status);
+    state={ok:true,j};
+  }catch(e){state={ok:false,m:e instanceof TypeError?t('net'):e.message}}
+  clearInterval(tm);busy=false;$('#go').disabled=false;paint();
+}
+
+const dz=$('#dz');
+$('#f').onchange=e=>pick(e.target.files[0]);
+dz.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();$('#f').click()}};
+['dragenter','dragover'].forEach(n=>dz.addEventListener(n,e=>{e.preventDefault();dz.classList.add('drag')}));
+['dragleave','drop'].forEach(n=>dz.addEventListener(n,e=>{e.preventDefault();dz.classList.remove('drag')}));
+dz.addEventListener('drop',e=>pick(e.dataTransfer.files[0]));
+$('#go').onclick=analyze;
+$('#rs').onclick=()=>{file=null;state=null;$('#f').value='';$('#pv').hidden=true;$('#dzc').hidden=false;$('#go').disabled=true;$('#rs').hidden=true;paint()};
+$('#lg').onclick=()=>setLang(lang==='ar'?'en':'ar');
+setLang(lang);ping();setInterval(ping,15000);
+</script>
+</body>
+</html>
