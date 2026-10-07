@@ -6,9 +6,9 @@
 
 | Field            | Value                                |
 | ---------------- | ------------------------------------ |
-| Full Name        | *(your full name)*                   |
+| Full Name        | *(Sarah Mahmoud fathy)*                   |
 | Project Name     | AI Farm Assistant                    |
-| GitHub Username  | *(your GitHub username)*             |
+| GitHub Username  | *(https://github.com/Sarahhh005)*             |
 | Internship Batch | August–October 2026                  |
 | Training Program | Large Language Models (LLMs) Program |
 | Organization     | [**Edrak for Ai**](https://edrak4ai.com/en)                         |
@@ -191,11 +191,8 @@ python rag/retrieval/rag_chain.py   # tests RAG on its own
 
 *Add screenshots or a short screen recording here, for example:*
 
-```
-docs/screenshot-upload.png     – upload screen
-docs/screenshot-result.png     – diagnosis result
-docs/screenshot-arabic.png     – Arabic (RTL) interface
-```
+<img width="1497" height="923" alt="Screenshot 2026-10-07 043331" src="https://github.com/user-attachments/assets/6f7bce53-969f-453b-b045-641789aebea2" />
+
 
 ---
 
